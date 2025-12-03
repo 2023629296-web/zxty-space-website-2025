@@ -1,0 +1,2368 @@
+/* ================== GLOBAL / MACARON PALETTE & FONTS ================== */
+
+:root {
+  /* Main backgrounds */
+  --bg-main: lavenderblush;
+  --bg-alt: seashell;
+  --bg-card: mistyrose;
+
+  /* Extra macaron tones */
+  --bg-card-rose: lavenderblush;
+  --bg-card-peach: peachpuff;
+  --bg-card-mint: honeydew;
+  --bg-card-lemon: lightgoldenrodyellow;
+
+  --macaron-pink: lightpink;
+  --macaron-lavender: lavender;
+  --macaron-mint: honeydew;
+  --macaron-lemon: lemonchiffon;
+  --macaron-blue: lightcyan;
+  --macaron-peach: peachpuff;
+  --macaron-turquoise: paleturquoise;
+
+  /* Lines & shadows */
+  --border-soft: lightpink;
+  --shadow-soft: lightgray;
+
+  /* Text */
+  --text-main: dimgray;
+  --text-strong: darkslategray;
+  --heading: mediumvioletred;
+
+  /* Buttons / accents */
+  --button-main: deeppink;
+  --button-hover: hotpink;
+
+  /* Fonts */
+  --font-base: "Nunito", "Segoe UI", system-ui, sans-serif;
+  --font-heading: "Fredoka", "Nunito", sans-serif;
+  --font-accent: "Quicksand", "Nunito", sans-serif;
+  --font-logo: "Fredoka", "Nunito", sans-serif;
+}
+
+/* ================== RESET ================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  /* colourful background again */
+  background-image: linear-gradient(
+    to bottom,
+    lavenderblush,
+    mistyrose,
+    honeydew
+  );
+  background-attachment: fixed;
+  color: var(--text-main);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Main wrapper for each page */
+
+.page-wrapper {
+  max-width: 1100px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+}
+
+/* ================== HEADER / NAV ================== */
+
+.site-header {
+  /* pastel macaron gradient bar at the top */
+  background-image: linear-gradient(
+    to right,
+    var(--macaron-pink),
+    var(--macaron-peach),
+    var(--macaron-mint),
+    var(--macaron-blue)
+  );
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 4px 12px var(--shadow-soft);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* logo / name */
+
+.nav-logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  /* tag shape */
+  padding: 0.4rem 1.6rem;
+  border-radius: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 192, 203, 0.9); /* soft pink outline */
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.18),
+    0 0 0 3px rgba(255, 255, 255, 0.6);        /* white ring */
+
+  /* text */
+  font-family: "Fredoka", var(--font-logo);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--heading); /* strong pink-purple */
+  white-space: nowrap;
+}
+
+/* small icon on the left */
+.nav-logo::before {
+  content: "✧";
+  font-size: 1rem;
+  color: var(--button-main);
+  transform: translateY(-1px);
+}
+
+/* tiny pastel underline effect */
+.nav-logo::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0.2rem;
+  height: 3px;
+  border-radius: 999px;
+  background-image: linear-gradient(
+    to right,
+    var(--macaron-pink),
+    var(--macaron-peach),
+    var(--macaron-mint)
+  );
+  opacity: 0.6;
+}
+
+/* soft hover */
+.nav-logo:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 9px 22px rgba(0, 0, 0, 0.22),
+    0 0 0 3px rgba(255, 255, 255, 0.9);
+}
+
+
+/* nav menu */
+
+.nav-menu {
+  display: flex;
+  gap: 0.6rem;
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+
+/* ========= NAV MENU – ZXTY SPACE STYLE ========= */
+
+.nav-menu {
+  display: flex;
+  gap: 0.4rem;
+  font-family: var(--font-accent);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+/* base pill buttons */
+.nav-menu a {
+  position: relative;
+  padding: 0.45rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 192, 203, 0.7); /* soft pink outline */
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  color: slategray;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.12s ease,
+    border-color 0.2s ease;
+}
+
+/* little pastel under-glow on hover */
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 0.16rem;
+  height: 3px;
+  border-radius: 999px;
+  background-image: linear-gradient(
+    to right,
+    var(--macaron-pink),
+    var(--macaron-mint)
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* hover – light pill */
+.nav-menu a:not(.nav-current):hover {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.98),
+    rgba(255, 250, 250, 0.98)
+  );
+  border-color: rgba(255, 192, 203, 1);
+  color: var(--heading);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  transform: translateY(-1px);
+}
+
+.nav-menu a:not(.nav-current):hover::after {
+  opacity: 0.7;
+}
+
+/* current page – hot pink macaron */
+.nav-menu a.nav-current {
+  background-image: linear-gradient(
+    120deg,
+    var(--button-main),
+    #ff6fb5,
+    var(--macaron-peach)
+  );
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 9px 22px rgba(255, 105, 180, 0.55);
+}
+
+.nav-menu a.nav-current::after {
+  opacity: 0.9;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 240, 250, 0.9)
+  );
+}
+
+/* subtle press effect */
+.nav-menu a.nav-current:hover {
+  transform: translateY(1px);
+  box-shadow: 0 5px 14px rgba(255, 105, 180, 0.45);
+}
+
+
+/* ================== HEADINGS & TEXT ================== */
+
+.page-title,
+.section-title,
+.hobbies-wrap h2 {
+  text-align: center;
+  color: var(--heading);
+}
+
+.page-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2.4rem;
+  text-transform: none;
+  letter-spacing: 0.06em;
+  margin-top: 2rem;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 1px 0 white;
+}
+
+.section-title,
+.contact-heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 white;
+  margin-bottom: 0.6rem;
+}
+/* Small pastel underline for special section titles */
+.section-title-bar::after {
+  content: "";
+  display: block;
+  width: 110px;
+  height: 4px;
+  margin: 0.5rem auto 0;
+  border-radius: 999px;
+  background-image: linear-gradient(
+    to right,
+    var(--macaron-pink),
+    var(--macaron-peach),
+    var(--macaron-mint)
+  );
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.page-intro,
+.section-subtitle,
+.hobby-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0.4rem auto 1.8rem;
+  font-size: 0.95rem;
+  font-family: var(--font-base);
+  color: var(--text-main);
+}
+
+/* Ensure section titles are clearly visible */
+.section-title {
+  color: var(--heading);   /* mediumvioletred from your palette */
+}
+
+/* ================== GENERIC SECTION CARD ================== */
+
+.section {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--bg-card),
+    var(--bg-card-rose)
+  );
+  border: 1px solid var(--border-soft);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 26px var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-image: linear-gradient(
+    to right,
+    var(--macaron-pink),
+    var(--macaron-lemon),
+    var(--macaron-mint),
+    var(--macaron-blue)
+  );
+}
+
+/* ================== HOME HERO ================== */
+
+.home-hero {
+  margin-top: 2rem;
+  padding: 3rem;
+  border-radius: 1.8rem;
+  background-image: linear-gradient(
+    to right,
+    mistyrose,
+    lemonchiffon,
+    honeydew,
+    lightcyan
+  );
+  box-shadow: 0 18px 40px var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+/* pastel glow blobs */
+
+.home-hero::before,
+.home-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.7;
+}
+
+.home-hero::before {
+  width: 260px;
+  height: 260px;
+  background-color: lightpink;
+  top: -80px;
+  left: -40px;
+}
+
+.home-hero::after {
+  width: 260px;
+  height: 260px;
+  background-color: plum;
+  bottom: -80px;
+  right: -40px;
+}
+
+/* inner layout */
+
+.home-hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* left text */
+
+.home-hero-heading {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: var(--heading);
+}
+
+.home-hero-body {
+  font-size: 0.98rem;
+  font-family: var(--font-base);
+  color: var(--text-main);
+  max-width: 32rem;
+  margin-left: auto;  /* Center the element horizontally */
+  margin-right: auto; /* Center the element horizontally */
+  text-align: center;  /* Center the text itself */
+  margin-bottom: 1.5rem;
+}
+
+.home-hero-tags {
+  margin-top: 0.4rem;
+  margin-bottom: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.home-hero-username {
+  font-size: 0.95rem;
+  font-family: var(--font-accent);
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-bottom: 0.2rem;
+}
+
+/* hero button */
+
+.home-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--button-main),
+    var(--macaron-pink)
+
+  );
+  color: white;
+  font-size: 0.9rem;
+  font-family: var(--font-accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+  cursor: pointer;
+  }
+
+
+
+
+/* Add space between "ZXTY SPACE" and "Home" only */
+.nav-menu a:nth-child(1) {
+  margin-right: 1rem;  /* Adds space after "Zxty Space" */
+}
+
+
+
+
+
+.home-hero-button:hover {
+  background-image: linear-gradient(
+    to right,
+    var(--macaron-pink),
+    var(--button-hover)
+  );
+}
+
+/* right photo */
+
+.home-hero-photo {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background-color: var(--bg-alt);
+  box-shadow: 0 18px 40px var(--shadow-soft);
+}
+
+.home-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ================== BADGES (chips) ================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  background-color: var(--macaron-mint);
+  border: 1px solid var(--border-soft);
+  font-size: 0.8rem;
+  font-family: var(--font-accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.badge-pink { background-color: var(--macaron-pink); }
+.badge-mint { background-color: var(--macaron-mint); }
+.badge-lemon { background-color: var(--macaron-lemon); }
+.badge-blue { background-color: var(--macaron-blue); }
+.badge-peach { background-color: var(--macaron-peach); }
+
+/* ================== BIODATA HERO ================== */
+
+.biodata-hero {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.8rem 2.2rem;
+  border-radius: 1.8rem;
+  background-image: linear-gradient(
+    to right,
+    var(--macaron-lavender),
+    var(--bg-main),
+    var(--macaron-peach)
+  );
+  box-shadow: 0 18px 36px var(--shadow-soft);
+}
+
+.biodata-hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+/* round photo */
+
+.biodata-hero-photo {
+  flex: 0 0 160px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 12px 28px gray;
+  background-color: var(--bg-alt);
+}
+
+.biodata-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== GLOBAL MAIN TITLES ===== */
+
+/* Big page titles / hero titles */
+.page-title,
+.home-hero-heading,
+.biodata-hero-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--heading);       /* medium violet / pink */
+  text-transform: none;
+}
+
+/* Section titles inside content (including Personal Details, Hobbies, etc.) */
+.section-title,
+.contact-heading,
+.contact-col-title,
+.hobbies-wrap h2,
+.family-card h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--heading);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+/* ================== PERSONAL DETAILS TABLE — SAME STYLE, CLEANER ================== */
+
+
+/* Personal Details Table Styling */
+.personal-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow around the table */
+  position: relative;
+  background-color: #ffffff; /* White background */
+  border: 2px solid var(--macaron-pink); /* Pink border around the table */
+}
+
+/* Table Headers */
+.personal-details-table th {
+  padding: 1.2rem;
+  text-align: center; /* Center align header text */
+  background-color: var(--macaron-pink); /* Soft Macaron Pink */
+  color: white;
+  font-weight: bold;
+  font-family: var(--font-heading);
+  border-bottom: 3px solid var(--macaron-peach); /* Soft Peach Border */
+  box-shadow: 0 2px 5px rgba(255, 105, 180, 0.2); /* Soft glow effect */
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Table Body */
+.personal-details-table td {
+  padding: 1rem;
+  background-color: var(--macaron-mint); /* Soft Macaron Mint for the body */
+  color: var(--text-main);
+  text-align: center; /* Center align the text */
+  font-family: var(--font-base);
+  border-bottom: 1px solid rgba(255, 192, 203, 0.7); /* Soft pink border */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth effect on hover */
+}
+
+/* Alternating Row Colors */
+.personal-details-table tr:nth-child(even) {
+  background-color: var(--macaron-lemon); /* Soft Macaron Lemon for even rows */
+}
+
+/* Hover Effect: Highlight rows on hover */
+.personal-details-table td:hover {
+  background-color: rgba(255, 105, 180, 0.1); /* Light pink hover effect */
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3); /* Soft glow effect */
+}
+
+/* Add bubble effect behind the table */
+.personal-details-table::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 50%, transparent);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(30px);
+  animation: bubble-animation 6s infinite;
+}
+
+/* Animation for bubble effect */
+@keyframes bubble-animation {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Add subtle glowing effect to the table */
+.personal-details-table {
+  animation: glow-animation 5s ease-in-out infinite;
+}
+
+/* Glowing effect animation */
+@keyframes glow-animation {
+  0% {
+    box-shadow: 0 0 15px var(--macaron-pink), 0 0 25px var(--macaron-peach);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--macaron-mint), 0 0 40px var(--macaron-blue);
+  }
+  100% {
+    box-shadow: 0 0 15px var(--macaron-pink), 0 0 25px var(--macaron-peach);
+  }
+}
+
+/* Left Side Gradient (Blue to Mint) */
+.personal-details-table {
+  background: linear-gradient(to right, var(--macaron-blue), var(--macaron-mint)); /* Macaron Blue to Mint Gradient */
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Additional glow for left side */
+.personal-details-table::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100%;
+  background: linear-gradient(to right, var(--macaron-blue), transparent);
+  filter: blur(40px);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+
+
+/* ====== MOBILE FRIENDLY VERSION ====== */
+
+@media (max-width: 600px) {
+  .biodata-table,
+  .biodata-table tbody,
+  .biodata-table tr,
+  .biodata-table th,
+  .biodata-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .biodata-table {
+    border-radius: 1.4rem;
+  }
+
+  .biodata-table tr {
+    border: none;
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.6rem;
+    background-color: #fff;
+    border-radius: 1.1rem;
+    box-shadow: 0 4px 14px var(--shadow-soft);
+  }
+
+  .biodata-table th {
+    background-image: none;
+    background-color: transparent;
+    border-right: none;
+    padding: 0 0 0.15rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    opacity: 0.8;
+  }
+
+  .biodata-table td {
+    background-color: transparent;
+    padding: 0 0 0.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ================== HOBBIES & INTERESTS ================== */
+
+/* General styling for the container of hobby cards */
+.hobbies-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centers all hobby cards horizontally */
+  text-align: center;   /* Centers text in hobby cards */
+  padding: 15px;
+}
+
+/* Center the cards horizontally within the container */
+.hobby-row {
+  display: flex;
+  justify-content: center;  /* Center hobby cards horizontally */
+  gap: 20px;
+  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+}
+
+/* General Styling for Hobby Cards */
+.hobby-card {
+  width: 250px; /* You can adjust the width */
+  height: 350px; /* Adjust height if needed */
+  perspective: 1000px; /* Perspective for flip effect */
+}
+
+.hobby-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s; /* Flip animation */
+}
+
+.hobby-card:hover .hobby-inner {
+  transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+.hobby-front, .hobby-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center the text */
+}
+
+.hobby-front {
+  background-color: lightblue;
+  flex-direction: column; /* Stack content vertically in the front */
+  padding-top: 10px; /* Adjust this padding to create space above the title */
+}
+
+.hobby-back {
+  background-color: lightcoral;
+  transform: rotateY(180deg); /* Back of the card is rotated */
+  flex-direction: column; /* Stack content vertically in the back */
+  padding: 20px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-top: 10px; /* Adjust this value to add a gap above the title */
+  margin-bottom: 10px; /* Adjust to control the space below the title */
+}
+
+.description {
+  font-size: 1.1em;
+  margin-bottom: 0.5px;
+  max-width: 80%; /* Optional: controls width for better readability */
+}
+
+/* Adjusting Front Image Size */
+.hobby-front img {
+  width: 100%; /* Ensures the image fills the container width */
+  height: auto; /* Keeps the aspect ratio */
+  max-width: 200px; /* Limits the size of the front image */
+  object-fit: cover; /* Ensures the image fills the space without distortion */
+}
+
+/* Adjusting Back Image Size */
+.hobby-back img {
+  width: 100%; /* Ensures the image fills the container width */
+  height: auto; /* Keeps the aspect ratio */
+  max-width: 200px; /* Limits the size of the back image */
+  object-fit: cover; /* Ensures the image fills the space without distortion */
+}
+
+.hobby-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* Center buttons horizontally */
+}
+
+.hobby-link {
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 3px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.hobby-link:hover {
+  background-color: #45a049;
+}
+
+.hobby-green-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hobby-green-btn:hover {
+  background-color: #388E3C; /* Darker green on hover */
+}
+
+.hobby-red-btn {
+  background-color: #FF5252; /* Red */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hobby-red-btn:hover {
+  background-color: #B71C1C; /* Darker red on hover */
+}
+
+/* ================== GALLERY & HOBBIES STYLES ================== */
+
+/* Other gallery and hobby card styles here */
+
+/* ================== HOBBY CARDS – ONE ROW AND ADJUSTED GAP ================== */
+
+/* Ensure hobby cards are displayed in one row */
+.hobby-row {
+  display: flex;
+  justify-content: space-evenly;  /* Space evenly between cards */
+  gap: 1.5rem;                   /* Space between cards */
+  align-items: flex-start;       /* Align items at the top */
+  flex-wrap: nowrap;             /* Prevent wrapping */
+}
+
+/* Adjust gap between the bottom of the images and the text */
+.hobby-card {
+  width: 30%;  /* Each card takes up 30% of the container's width */
+  height: auto; /* Adjust the height based on content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Center the text and image */
+  margin-bottom: 20px;   /* Adjust the gap from the bottom of the card */
+}
+
+/* Title label adjustments */
+.hobby-front-label {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-main);
+}
+
+/* Adjust the space between the front image and the text */
+.hobby-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjust text on the back of the card */
+.hobby-back {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hobby-link {
+  background-color: #4CAF50;  /* Green background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hobby-link:hover {
+  background-color: #45a049;  /* Darker green on hover */
+}
+
+/* ================== POSITIVE & REFLECTIVE ================== */
+
+.positive-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.95rem;
+  font-family: var(--font-base);
+  color: var(--text-main);
+}
+
+.positive-text p {
+  margin-bottom: 1rem;
+}
+
+.positive-tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* ================== TIMELINE ================== */
+
+.timeline {
+  margin-top: 1.5rem;
+  border-left: 3px solid var(--border-soft);
+  padding-left: 1.5rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 0.4rem;
+}
+
+/* attach the dot to the year pill instead of the top of the item */
+.timeline-year {
+  position: relative;
+  display: inline-block; /* keep the pill shape */
+}
+
+.timeline-year::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;          /* line it up with the vertical line */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-image: radial-gradient(
+    circle at center,
+    var(--button-main),
+    var(--heading)
+  );
+  box-shadow: 0 0 0 4px var(--macaron-lavender);
+}
+
+/* mini memory card (photo) */
+
+
+.timeline-photo-card {
+  margin-bottom: 0.8rem;
+  width: 100%;  /* Ensure it takes full width of its container */
+  background-image: linear-gradient(
+    to bottom right,
+    var(--macaron-peach),
+    var(--bg-alt)
+  );
+  border-radius: 1.3rem;
+  overflow: hidden;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+}
+
+/* Modify the image to fit the container properly */
+.timeline-photo-card img {
+  width: 100%; /* Image takes full width of its container */
+  height: auto; /* Keeps aspect ratio */
+  object-fit: cover; /* Ensures the image fills the container */
+}
+
+/* Container for all timeline items */
+.timeline-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusting width to ensure images are not too big */
+  gap: 1.5rem;  /* Space between the images and text */
+  justify-items: center;  /* Centers content */
+  margin-bottom: 2rem;  /* Space after grid */
+}
+
+/* Individual photo card with text below */
+.timeline-photo-card {
+  width: 100%;
+  max-width: 340px; /* Max width for images */
+  background-image: linear-gradient(to bottom right, var(--macaron-peach), var(--bg-alt));
+  border-radius: 1.3rem;
+  overflow: hidden;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+  padding: 1rem;  /* Adding padding inside the card */
+  text-align: center;
+}
+
+/* Container for all timeline items */
+.timeline-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider images, set minimum to 350px */
+  gap: 1rem;  /* Reduced space between rows */
+  justify-items: center;  /* Centers content */
+  margin-bottom: 1.5rem;  /* Reduced space below the grid */
+}
+
+/* Individual photo card with text below */
+.timeline-photo-card {
+  width: 100%;
+  max-width: 400px; /* Increased width for better horizontal size */
+  background-image: linear-gradient(to bottom right, var(--macaron-peach), var(--bg-alt));
+  border-radius: 1.3rem;
+  overflow: hidden;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+  padding: 1rem;  /* Padding around the card */
+  text-align: center;
+  height: 280px; /* Shortened height for a less tall design */
+}
+
+/* Container for all timeline items */
+.timeline-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider images */
+  gap: 1rem;  /* Reduced space between items */
+  justify-items: center;  /* Centers content */
+  margin-bottom: 1rem;  /* Reduced space below the grid */
+}
+
+/* Individual photo card with text below */
+.timeline-photo-card {
+  width: 100%;
+  max-width: 400px; /* Max width for better horizontal size */
+  background-image: linear-gradient(to bottom right, var(--macaron-peach), var(--bg-alt));
+  border-radius: 1.3rem;
+  overflow: hidden;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+  padding: 0.8rem;  /* Reduced padding */
+  text-align: center;
+  height: 260px; /* Shortened height */
+}
+
+/* Container for all timeline items */
+.timeline-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider images */
+  gap: 0.08rem;  /* Reduced space between items */
+  justify-items: center;  /* Centers content */
+  margin-bottom: 1rem;  /* Reduced space below the grid */
+}
+
+/* Individual photo card with text below */
+.timeline-photo-card {
+  width: 100%;
+  max-width: 350px; /* Max width for better horizontal size */
+  background-image: linear-gradient(to bottom right, var(--macaron-peach), var(--bg-alt));
+  border-radius: 1.3rem;
+  overflow: hidden;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+  padding: 0.6rem;  /* Reduced padding */
+  text-align: center;
+  height: auto;/* auto height */
+}
+
+/* Image inside the photo card */
+.timeline-photo-card img {
+  width: 100%;
+  height: 180px;  /* Reduced height to make the image smaller */
+  object-fit: cover;  /* Ensures the image fills the space */
+  border-radius: 1rem;
+}
+
+/* Adjusting the text caption for compact spacing */
+.timeline-photo-caption {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  padding: 0.4rem ;  /* Reduced padding around text */
+  font-family: var(--font-base);
+  line-height: 1.3;
+}
+
+/* Responsive Media Query */
+@media screen and (max-width: 768px) {
+  .timeline-photo-grid {
+    grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
+    gap: 1rem;
+  }
+
+  .timeline-photo-card {
+    max-width: 100%; /* Full width on smaller devices */
+  }
+}
+
+  height: auto; /* Keeps the image aspect ratio intact */
+object-fit: cover; /* Keeps the image from being distorted */
+}
+
+
+.timeline-photo-caption {
+  padding: 0.4rem ;
+  font-size: 0.85rem;
+  font-family: var(--font-base);
+  text-align: center;
+  color: var(--text-main);
+}
+
+/* text below the photo */
+
+.timeline-year {
+  display: inline-block;
+  margin-top: 0.15rem;
+  margin-bottom: 0.2rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background-color: var(--macaron-mint);
+  font-size: 0.8rem;
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-main);
+}
+
+.timeline-role {
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: var(--font-base);
+  color: var(--text-strong);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-place {
+  font-size: 0.85rem;
+  font-family: var(--font-base);
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  font-family: var(--font-base);
+  color: var(--text-main);
+}
+
+/* group of photo cards inside each timeline item */
+
+.timeline-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;   /* space before the year text */
+  justify-items: center;   /* center each card in its column */
+}
+
+.timeline-photo-grid .timeline-photo-card {
+  width: 100%;
+  max-width: 320px;        /* keeps that big cute size */
+  margin: 1;               /* spacing handled by gap above */
+}
+
+/* group of photo cards inside each timeline item – for 2 photos */
+.timeline-photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;   /* center the two cards */
+  margin-bottom: 1.2rem;     /* space before the year text */
+}
+
+/* ================== FAMILY TITLES & TEXT ================== */
+
+/* Intro Section (Family Title and Description) */
+.intro-section {
+  background: linear-gradient(to right, var(--macaron-pink), var(--macaron-blue)); /* Soft gradient background */
+  padding: 2rem;  /* Add padding around the section */
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem; /* Space between intro and family section */
+  text-align: center;  /* Center the text horizontally */
+  width: 100%;  /* Ensure the section takes up the full width */
+  max-width: 1000px;  /* Limit the maximum width */
+  margin: 0 auto;  /* Center the section horizontally */
+}
+
+/* Title of the Intro Section */
+.intro-title {
+  font-size: 2.5rem;   /* Larger title font */
+  font-weight: 600;
+  color: var(--heading); /* Deep pink color for the title */
+  margin-bottom: 1rem;
+}
+
+/* Description Text for the Intro Section */
+.intro-description {
+  font-size: 1.2rem;   /* Adjust description font size */
+  color: var(--text-main); /* Main text color */
+  line-height: 1.6;
+  font-family: var(--font-base);
+  text-align: center; /* Ensure text is centered */
+  max-width: 800px;  /* Limit the width of the description */
+  margin: 0 auto;  /* Center the description */
+}
+
+/* Family Section */
+.family-wrapper {
+  width: 100%;
+  max-width: 800px;   /* Limit the width of the content */
+  margin: 0 auto;     /* Center the content */
+  padding: 1.5rem;    /* Reduced padding inside the wrapper */
+  background: linear-gradient(to right, var(--macaron-pink), var(--macaron-blue)); /* Soft background gradient */
+  border-radius: 1.5rem;  /* Rounded corners */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);  /* Shadow around the container */
+  overflow: hidden;   /* Ensure no overflow outside the rounded corners */
+  height: auto;
+  box-sizing: border-box;
+  margin-top: 2rem;   /* Adds space from the top */
+}
+
+/* Section for Parents and Siblings */
+.family-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;          /* Reduced space between sections */
+}
+
+/* Individual Section */
+.family-section {
+  background-color: var(--bg-card);  /* Use your defined card background color */
+  border-radius: 1.5rem;      /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  padding: 1.5rem;            /* Reduced padding */
+  max-width: 90%;             /* Control the section's width (Edit this to adjust the section width) */
+  margin: 0 auto;             /* Center the section */
+}
+
+/* Title for Each Section */
+.family-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--heading);  /* Use heading color variable */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Description Text */
+.family-section p {
+  font-size: 1rem;
+  color: var(--text-main); /* Use main text color variable */
+  line-height: 1.6;
+  text-align: center;
+  font-family: var(--font-base);
+}
+
+/* Sibling and Parents Image Section */
+.family-images {
+  display: flex;
+  justify-content: space-evenly; /* Spread sibling images evenly */
+  gap: 1rem;
+  flex-wrap: nowrap;  /* Prevent wrapping, keep all images in one row */
+  justify-content: center; /* Center the images */
+}
+
+/* Parents Image Section */
+.family-image-parents {
+  display: flex;
+  justify-content: center; /* Center the parents' image */
+  align-items: center;
+  width: 100%;
+}
+
+.family-image-parents img {
+  width: 100%;
+  height: 250px;  /* Fixed height */
+  object-fit: cover;
+  border-radius: 1.2rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Sibling Image Section */
+.family-image {
+  background-color: var(--macaron-pink);  /* Light pink background for each sibling image */
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 250px;  /* Adjusted width for sibling images to fit in one row */
+}
+
+.family-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure image fits within its container */
+}
+
+/* Caption for Images */
+.family-image .caption {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-main); /* Use text color variable */
+  font-family: var(--font-base);
+  background-color: rgba(255, 255, 255, 0.8);  /* Slight background for readability */
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .family-wrapper {
+    max-width: 100%;  /* Full width on mobile */
+    padding: 1rem;    /* Less padding on mobile */
+  }
+
+  .family-images {
+    flex-direction: column; /* Stack images vertically */
+    align-items: center;
+  }
+
+  .family-image {
+    max-width: 90%;  /* Full width for sibling images on mobile */
+  }
+}
+
+/* ================== GALLERY ================== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* exactly 3 in a row */
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--macaron-blue),
+    var(--bg-alt)
+  );
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 26px var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure the content stretches to fill the item */
+  height: 100%; /* Ensure the item takes full height */
+}
+
+.gallery-grid img {
+  width: 100%; /* Makes sure the image takes up the full width of its container */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ================== GALLERY CAPTION ================== */
+
+/* Let the caption fill the remaining space and center the text */
+.gallery-caption {
+  padding: 1.2rem 1.6rem;
+  font-size: 1rem;
+  color: var(--text-main);
+  font-family: var(--font-base);
+  text-align: center; /* Center the text horizontally */
+  
+  display: flex;
+  flex-direction: column; /* Align text vertically */
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the text */
+  height: 100%; /* Ensures the caption takes the full available space */
+}
+
+/* Optional: Add a hover effect for the caption */
+.gallery-item:hover .gallery-caption {
+  background: rgba(255, 255, 255, 0.7); /* Adds background on hover */
+}
+
+/* ================== CONTACT PAGE ================== */
+
+.contact-page {
+  margin-top: 2rem;
+}
+
+.contact-heading {
+  text-align: center;
+  color: var(--heading);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 0 white;
+}
+
+.contact-subtitle {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 1rem;
+  font-size: 0.95rem;
+  font-family: var(--font-base);
+  color: var(--text-main);
+}
+
+.contact-note {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+  font-family: var(--font-base);
+  color: var(--text-main);
+}
+
+/* two columns */
+
+.contact-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 2rem;
+}
+
+/* column titles */
+
+.contact-col-title {
+  font-size: 1.3rem;
+  font-family: var(--font-heading);
+  color: var(--heading);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* left: cards */
+
+.contact-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-card {
+  background-image: linear-gradient(
+    to right,
+    var(--macaron-blue),
+    var(--bg-card)
+  );
+  border-radius: 1.5rem;
+  padding: 1.1rem 1.4rem;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--macaron-mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.contact-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card-label {
+  font-size: 0.8rem;
+  font-family: var(--font-accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--heading);
+  margin-bottom: 0.25rem;
+}
+
+.contact-card-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-base);
+  color: var(--text-main);
+}
+
+/* right: form */
+
+.contact-form-wrapper {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--macaron-lavender),
+    var(--bg-alt),
+    var(--macaron-turquoise)
+  );
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+  padding: 1.6rem 1.8rem 1.8rem;
+}
+
+.contact-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.contact-form-grid label {
+  font-size: 0.85rem;
+  font-family: var(--font-accent);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.contact-form-grid input,
+.contact-form-grid textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--border-soft);
+  background-color: white;
+  font-family: var(--font-base);
+  font-size: 0.9rem;
+}
+
+.contact-form-grid textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* send button */
+
+.contact-submit {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-submit-button {
+  padding: 0.7rem 2.3rem;
+  border-radius: 999px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--macaron-pink),
+    var(--button-main)
+  );
+  color: white;
+  font-size: 0.9rem;
+  font-family: var(--font-accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+}
+
+.contact-submit-button:hover {
+  background-image: linear-gradient(
+    to right,
+    var(--button-main),
+    var(--button-hover)
+  );
+}
+
+/* ================== FOOTER ================== */
+
+.site-footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-soft);
+  font-size: 0.8rem;
+  font-family: var(--font-base);
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* ================== RESPONSIVE ================== */
+
+@media (max-width: 900px) {
+  .home-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-hero-heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .home-hero-body,
+  .home-hero-username,
+  .home-hero-tags {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-hero {
+    padding: 2.5rem 1.8rem;
+  }
+
+  .home-hero-photo {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .biodata-hero-inner {
+    flex-direction: column;
+  }
+
+  .contact-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-form-wrapper {
+    order: -1; /* form on top on mobile */
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .hobby-row {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 per row on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* 1 per row on phone */
+  }
+}
+
+@media (max-width: 550px) {
+  .hobby-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+  }
+}
+
+.personal-details-subtitle {
+  margin-top: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+/* Stronger text colour for biodata table */
+.biodata-table th {
+  color: var(--text-strong);   /* darker label text */
+}
+
+.biodata-table td {
+  color: var(--text-main);     /* keep readable grey */
+}
+.personal-details-subtitle {
+  color: var(--text-main);    /* nice readable grey */
+  margin-top: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== GLOBAL MAIN TITLES ===== */
+
+/* Big page titles / hero titles */
+.page-title,
+.home-hero-heading,
+.biodata-hero-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--heading);       /* same main heading colour */
+  text-transform: none;
+}
+
+/* Section titles inside content (Personal Details, Hobbies, Family, etc.) */
+.section-title,
+.contact-heading,
+.contact-col-title,
+.hobbies-wrap h2,
+.family-card h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--heading);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+/* ===== GLOBAL SUBTITLES / UNDER-TITLES ===== */
+
+/* ================== FAMILY TITLE & DESCRIPTION ================== */
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #c2185b;  /* deeper pink, much clearer */
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9); /* soft light outline */
+}
+
+/* ================== TYPOGRAPHY HIERARCHY – GLOBAL ================== */
+/* Put this at the very END of style.css */
+
+/* ① BIG PAGE TITLES (Home main title, page title, biodata hero title) */
+.page-title,
+.home-hero-heading,
+.biodata-hero-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #c2185b;
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.9);
+  margin-top: 2.2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ② SECTION TITLES (Meet My Family, Journey of Learning, etc.) */
+.section-title,
+.contact-heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #d81b60;
+  margin-bottom: 1.4rem;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+/* cute gradient underline under section titles */
+.section-title::after,
+.contact-heading::after {
+  content: "";
+  display: block;
+  width: 4.2rem;
+  height: 4px;
+  border-radius: 999px;
+  margin: 0.7rem auto 0;
+  background-image: linear-gradient(
+    to right,
+    var(--macaron-pink),
+    var(--macaron-peach),
+    var(--macaron-mint)
+  );
+}
+
+/* ③ SUBTITLES / INTRO TEXT UNDER TITLES */
+.page-intro,
+.section-subtitle,
+.hobby-intro,
+.contact-subtitle {
+  font-family: var(--font-base);
+  font-size: 0.98rem;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  color: #6b6b6b;
+  line-height: 1.8;
+}
+
+/* ④ CARD HEADINGS (Family card names, timeline role, small titles) */
+.family-heading,
+.family-card h3,
+.timeline-role,
+.hobby-back h3,
+.contact-col-title,
+.gallery-caption-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: #c2185b;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Make parents title in family hero follow the same style */
+.family-heading {
+  font-size: 1.6rem;
+}
+
+/* ⑤ SMALL LABELS (year badges, tags, nav pills already okay) */
+.timeline-year,
+.badge,
+.family-tag {
+  font-family: var(--font-accent);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* ⑥ BODY / DESCRIPTION TEXT (paragraphs everywhere) */
+.family-description p,
+.family-card p,
+.timeline-desc,
+.positive-text p,
+.contact-note,
+.section p,
+.biodata-hero-text p {
+  font-family: var(--font-base);
+  font-size: 0.96rem;
+  line-height: 1.8;
+  color: var(--text-main);
+}
+
+/* Centre the parents description nicely */
+.family-description {
+  text-align: center;
+}
+
+/* Sibling cards stay easy to read */
+.family-card p {
+  text-align: left;
+}
+/* ============================================================
+   CUTE UPGRADED PERSONAL DETAILS TABLE — MATCHES GALLERY STYLE
+   ============================================================ */
+
+.cute-details-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+}
+
+/* HEADER COLUMN (LEFT SIDE) */
+.cute-details-table th {
+  width: 38%;
+  padding: 1.2rem 1.4rem;
+  text-align: left;
+  background-image: linear-gradient(
+    to right,
+    #ffd1dc,
+    #ffe4f2,
+    #fff7fb
+  );
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c2185b;
+  border-right: 1px dashed rgba(255, 182, 193, 0.6);
+}
+
+/* VALUE COLUMN (RIGHT SIDE) */
+.cute-details-table td {
+  padding: 1.2rem 1.4rem;
+  font-size: 1rem;
+  font-family: var(--font-base);
+  background-color: #fffafc;
+  color: var(--text-main);
+}
+
+/* ROW SEPARATORS */
+.cute-details-table tr:not(:last-child) th,
+.cute-details-table tr:not(:last-child) td {
+  border-bottom: 1px solid rgba(255, 182, 193, 0.4);
+}
+
+/* SOFT HOVER */
+.cute-details-table tr:hover th,
+.cute-details-table tr:hover td {
+  background-color: #fff1f7;
+}
+
+/* ICONS IN LEFT COLUMN */
+.cute-details-table .icon {
+  margin-right: 6px;
+  font-size: 1.05rem;
+}
+
+/* ==================== MOBILE ==================== */
+@media(max-width: 600px) {
+  .cute-details-table,
+  .cute-details-table tbody,
+  .cute-details-table tr,
+  .cute-details-table th,
+  .cute-details-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .cute-details-table tr {
+    margin-bottom: 1rem;
+    border-radius: 1.3rem;
+    overflow: hidden;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+  }
+
+  .cute-details-table th {
+    border-right: none;
+    text-align: center;
+    padding-bottom: 0.4rem;
+    border-bottom: none;
+  }
+
+  .cute-details-table td {
+    padding-top: 0.3rem;
+    text-align: center;
+  }
+}
+
+/* ==================== CENTER ALL TEXT IN PERSONAL DETAILS TABLE ==================== */
+
+.cute-details-table th,
+.cute-details-table td {
+  text-align: center !important;
+}
+
+/* Fix left column icons so they still look cute */
+.cute-details-table th .icon {
+  margin-right: 6px;
+  display: inline-block;
+  transform: translateY(1px);
+}
+
+/* Centering the content in the home hero section */
+.home-hero-inner {
+  display: flex;  /* Use flexbox for centering */
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  /* Center vertically */
+  text-align: center;  /* Center the text */
+}
+
+/* Center the home hero body text */
+.home-hero-body {
+  font-size: 0.98rem;
+  font-family: var(--font-base);
+  color: var(--text-main);
+  max-width: 32rem;
+  margin: 0 auto;  /* Center the block element */
+  text-align: center;  /* Center the text */
+  margin-bottom: 1.5rem;  /* Maintain space below */
+}
+/* Adding margin-bottom to the content above the button */
+.home-hero-body {
+  font-size: 0.98rem;
+  font-family: var(--font-base);
+  color: var(--text-main);
+  max-width: 32rem;
+  margin: 0 auto;  /* Center the block element */
+  text-align: center;  /* Center the text */
+  margin-bottom: 9rem;  /* Adjust space between content and button */
+}
+/* Adding space below the button */
+.home-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--button-main),
+    var(--macaron-pink)
+  );
+  color: white;
+  font-size: 0.9rem;
+  font-family: var(--font-accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+  cursor: pointer;
+  margin-top: 1.5rem;  /* Space between content and button */
+  margin-bottom: 2rem;  /* Space below the button */
+}
+
+/* Adding space between "Zxty Space" and "Home" only */
+.nav-menu a:first-child {
+  margin-right: 1rem;  /* Adds space after "Zxty Space" */
+}
+/* Add space between "Zxty Space" and "Home" only */
+.nav-menu a:nth-of-type(1) {
+  margin-right: 1rem;  /* Adds space after "Zxty Space" */
+}
+
+
+
+
+/* Personal Details Table Styling */
+.personal-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow around the table */
+  position: relative;
+  background-color: #ffffff; /* White background */
+  border: 2px solid var(--macaron-pink); /* Pink border around the table */
+}
+
+/* Table Headers */
+.personal-details-table th {
+  padding: 1.2rem;
+  text-align: center; /* Center align header text */
+  background-color: var(--macaron-pink); /* Soft Macaron Pink */
+  color: white;
+  font-weight: bold;
+  font-family: var(--font-heading);
+  border-bottom: 3px solid var(--macaron-peach); /* Soft Peach Border */
+  box-shadow: 0 2px 5px rgba(255, 105, 180, 0.2); /* Soft glow effect */
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Table Body */
+.personal-details-table td {
+  padding: 1rem;
+  background-color: var(--macaron-mint); /* Soft Macaron Mint for the body */
+  color: var(--text-main);
+  text-align: center; /* Center align the text */
+  font-family: var(--font-base);
+  border-bottom: 1px solid rgba(255, 192, 203, 0.7); /* Soft pink border */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth effect on hover */
+}
+
+/* Alternating Row Colors */
+.personal-details-table tr:nth-child(even) {
+  background-color: var(--macaron-lemon); /* Soft Macaron Lemon for even rows */
+}
+
+/* Hover Effect: Highlight rows on hover */
+.personal-details-table td:hover {
+  background-color: rgba(255, 105, 180, 0.1); /* Light pink hover effect */
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3); /* Soft glow effect */
+}
+
+/* Gradient Effect for the Left Side */
+.personal-details-table {
+  background: linear-gradient(to right, var(--macaron-blue), var(--macaron-mint)); /* Blue to Mint gradient for left side */
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent; /* Ensure the gradient is visible */
+}
+
+/* Additional glow for left side */
+.personal-details-table::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100%;
+  background: linear-gradient(to right, var(--macaron-blue), transparent); /* Soft glow on the left side */
+  filter: blur(40px);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Add bubble effect behind the table */
+.personal-details-table::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 50%, transparent);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(30px);
+  animation: bubble-animation 6s infinite;
+}
+
+/* Animation for bubble effect */
+@keyframes bubble-animation {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Add subtle glowing effect to the table */
+.personal-details-table {
+  animation: glow-animation 5s ease-in-out infinite;
+}
+
+/* Glowing effect animation */
+@keyframes glow-animation {
+  0% {
+    box-shadow: 0 0 15px var(--macaron-pink), 0 0 25px var(--macaron-peach);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--macaron-mint), 0 0 40px var(--macaron-blue);
+  }
+  100% {
+    box-shadow: 0 0 15px var(--macaron-pink), 0 0 25px var(--macaron-peach);
+  }
+}
+
+
+
+
+/* General Styling for Hobby Cards */
+.hobby-card {
+  width: 250px; /* You can adjust the width */
+  height: 350px; /* Adjust height if needed */
+  perspective: 1000px;
+}
+
+.hobby-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.hobby-card:hover .hobby-inner {
+  transform: rotateY(180deg);
+}
+
+.hobby-front, .hobby-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.hobby-front {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Adjusting Front Image Size */
+.hobby-front img {
+  width: 100%; /* Ensures the image fills the container width */
+  height: auto; /* Keeps the aspect ratio */
+  max-width: 250px; /* Limits the size of the front image */
+  object-fit: cover; /* Ensures the image fills the space without distortion */
+}
+
+.hobby-back {
+  background-color: lightcoral;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  max-width: 80%; /* Optional: controls width for better readability */
+}
+
+.hobby-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hobby-link {
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.hobby-link:hover {
+  background-color: #45a049;
+}
+
+
+/* ================== GALLERY ================== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* exactly 3 in a row */
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--macaron-blue),
+    var(--bg-alt)
+  );
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 26px var(--shadow-soft);
+}
+
+.gallery-grid img {
+  width: 100%; /* Makes sure the image takes up the full width of its container */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ================== NEW GALLERY STYLES ================== */
+
+/* Make each gallery card equal height */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Allow each item to expand fully within the grid */
+}
+
+/* Let the caption fill the remaining space and center the text */
+.gallery-caption {
+  flex: 1;                          /* take up all available height */
+  padding: 1.2rem 1.6rem;
+  font-size: 1rem;
+  color: var(--text-main);
+  font-family: var(--font-base);
+  text-align: center;  /* Center the text horizontally */
+  display: flex; /* Use flexbox to center vertically */
+  align-items: center; /* Vertically center the text */
+  justify-content: center; /* Horizontally center the text */
+}
+
+/* Ensure that captions don't overlap with the image */
+.gallery-item:hover .gallery-caption {
+  background: rgba(255, 255, 255, 0.7); /* Optional: adds a background when hovered */
+}
+
+
+
+
